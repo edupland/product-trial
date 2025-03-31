@@ -34,8 +34,6 @@
                     </div>
                 </div>
 
-                <p>{{ product.isOnCart ? 'haha' : 'hihi' }}</p>
-
                 <p>Description</p>
 
                 <div class="text-sm font-medium text-secondary">{{ product.description }}</div>
@@ -47,8 +45,9 @@
                             <p-button label="Supprimer" severity="danger" (onClick)="onDelete(product)" />
                         </div>
 
-                        <div>
-                            <p-button label="Ajouter au panier" (onClick)="onAdd(product)" />
+                        <div class="flex gap-3 mt-1">
+                            <p-button label="Ajouter au panier" (onClick)="onAddCart(product)" />
+                            <p-button severity="danger" label="Retirer du panier" (onClick)="onRemoveCart(product)" />
                         </div>
                     </div>
                 </ng-template>

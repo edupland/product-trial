@@ -1,0 +1,22 @@
+<h1 class="text-center">Produits dans le panier</h1>
+
+<p-dataView #dv [value]="cart">
+  <ng-template pTemplate="list" let-product>
+    @for (c of cart; track c) {
+      <p-card class="block mb-2">
+                
+        <div class="content">
+            <div>
+                <span class="font-medium text-secondary text-sm">{{ c.category }}</span>
+                <div class="text-lg font-medium text-900 mt-2">{{ c.name }}</div>
+                
+            </div>
+        </div>
+
+        <p>Description</p>
+
+        <div class="text-sm font-medium text-secondary">{{ c.description }}</div>
+    </p-card>
+    }
+  </ng-template>
+</p-dataView>
