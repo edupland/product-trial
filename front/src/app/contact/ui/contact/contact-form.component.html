@@ -1,0 +1,36 @@
+<h1 class="text-center">Contact</h1>
+
+<form #form="ngForm" class="form-container" (ngSubmit)="onSend()">
+  <div class="form-field">
+    <label for="email">E-mail</label>
+    <input
+      pInputText
+      type="text"
+      id="email"
+      name="email"
+      [(ngModel)]="editedContact().email"
+      required
+    />
+  </div>
+
+  <div class="form-field">
+    <label for="message">Message</label>
+    <textarea
+      id="message"
+      name="message"
+      rows="5"
+      cols="30"
+      [(ngModel)]="editedContact().message"
+      maxlength="300"
+      required
+    >
+    </textarea>
+  </div>
+  <div>
+    <p-button type="submit" [disabled]="!form.valid" label="Envoyer" severity="success" />
+  </div>
+
+  <div *ngIf="showSuccessMessage">
+    <p class="send-message">Demande de contact envoyée avec succès</p>
+  </div>
+</form>
